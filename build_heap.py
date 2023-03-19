@@ -1,4 +1,5 @@
 # python3
+
 def sift_down(data, i, swaps):
     min = i
     left = 2*i+1
@@ -16,7 +17,6 @@ def sift_down(data, i, swaps):
 
 def build_heap(data):
     swaps = []
-    # TODO: Creat heap and heap sort
     # try to achieve  O(n) and not O(n2)
     for i in range(len(data) // 2, -1, -1):
         sift_down(data, i, swaps)
@@ -25,12 +25,6 @@ def build_heap(data):
 
 
 def main():
-    
-    # TODO : add input and corresponding checks
-    # add another input for I or F 
-    # first two tests are from keyboard, third test is from a file
-
-
     # input from keyboard
     n = int(input())
     data = list(map(int, input().split()))
@@ -42,7 +36,6 @@ def main():
     # and give back all swaps
     swaps = build_heap(data)
 
-    # TODO: output how many swaps were made, 
     # this number should be less than 4n (less than 4*len(data))
     assert len(swaps) <=4*n
     print(len(swaps))
